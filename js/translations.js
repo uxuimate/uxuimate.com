@@ -594,7 +594,7 @@ window.UXUI_TRANSLATIONS = {
         'cv.hero.hello': 'Здравейте! Казвам се',
         'cv.hero.tagline': 'На една стъпка сте от стратегически партньор, който мисли за потребителите и резултата ви като за свои. Ясна позиция. Чист дизайн. Измерим ефект.',
         'cv.hero.moreStudio': 'Повече за нашето студио',
-        'cv.hero.ready': 'Готови да дръпнете напред?',
+        'cv.hero.ready': 'Готови ли сте да изпреварите конкуренцията?',
         'cv.hero.contactUs': 'Свържете се',
         'cv.about.heading': 'За мен',
         'cv.about.heading.html': 'За <span class="mil-thin">мен</span>',

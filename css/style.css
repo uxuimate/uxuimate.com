@@ -5152,3 +5152,15 @@ html[lang="bg"] body,
 html[lang="bg"] [class*="mil-"] {
   font-family: "Manrope", "Outfit", sans-serif;
 }
+
+/* Ensure Font Awesome icons render in BG too (avoid Manrope overriding icon font) */
+html[lang="bg"] .fa,
+html[lang="bg"] .fas,
+html[lang="bg"] .far,
+html[lang="bg"] .fal,
+html[lang="bg"] .fab {
+  font-family: "Font Awesome 5 Free" !important;
+}
+html[lang="bg"] .fab {
+  font-family: "Font Awesome 5 Brands" !important;
+}

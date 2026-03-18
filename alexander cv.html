@@ -110,7 +110,7 @@
                                         <li class="mil-has-children mil-active">
                                         <a href="#." data-i18n="common.menu.otherPages">Other pages</a>
                                         <ul>
-                                                <li><a href="alexander cv.html">Alexander</a></li>
+                                                <li><a href="alexander%20cv.html">Alexander</a></li>
                                             <li><a href="team.html" data-i18n="common.nav.team">Team</a></li>
                                             <li><a href="contact.html" data-i18n="common.nav.contact">Contact</a></li>
                                             <li><a href="404.html">404</a></li>
@@ -202,12 +202,46 @@
         <div class="mil-curtain"></div>
         <!-- curtain end -->
 
-        <!-- frame -->
+        <!-- frame: glassmorphism top nav -->
         <div class="mil-frame">
             <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo"><img src="img/icons/logo.png" alt="Logo"></a>
-                <div class="mil-menu-btn">
-                    <span></span>
+                <a href="index.html" class="mil-nav-logo">
+                    <img src="img/icons/logo - footer.png" alt="UX UI MATE">
+                </a>
+                <nav class="mil-nav-links">
+                    <a href="index.html" data-i18n="common.nav.homepage">Homepage</a>
+                    <a href="works.html" data-i18n="common.nav.works">Works</a>
+                    <div class="mil-nav-dropdown">
+                        <a href="services.html" class="mil-nav-dropdown-trigger" data-i18n="common.nav.services">Services</a>
+                        <ul class="mil-nav-dropdown-menu">
+                            <li><a href="services.html" data-i18n="common.nav.allServices">All Services</a></li>
+                            <li><a href="ux-research-strategy.html" data-i18n="common.nav.uxResearch">UX Research &amp; Strategy</a></li>
+                            <li><a href="ux-ui-design.html" data-i18n="common.nav.uxUiDesign">UX/UI Design</a></li>
+                            <li><a href="website-design-and-development.html" data-i18n="common.nav.webDesign">Web Design &amp; Development</a></li>
+                            <li><a href="branding-and-visual-identity.html" data-i18n="common.nav.branding">Branding &amp; Visual Identity</a></li>
+                        </ul>
+                    </div>
+                    <a href="blog.html" data-i18n="common.nav.insights">Insights</a>
+                    <a href="about.html" data-i18n="common.nav.about">About</a>
+                </nav>
+                <div class="mil-nav-actions">
+                    <button type="button" class="mil-nav-theme-toggle" aria-label="Toggle theme" title="Theme"><i class="fas fa-sun"></i></button>
+                    <span class="mil-nav-sep" aria-hidden="true"></span>
+                    <div class="mil-lang-switcher">
+                        <a href="#en" class="mil-lang-flag mil-lang-active" aria-label="English" title="English"><img src="img/icons/United Kingdom.png" alt="English" width="28" height="28"></a>
+                        <a href="#bg" class="mil-lang-flag" aria-label="Български" title="Български"><img src="img/icons/Bulgaria.png" alt="Български" width="28" height="28"></a>
+                    </div>
+                    <details class="mil-lang-mobile">
+                        <summary class="mil-lang-current-btn" aria-label="Choose language"><img src="img/icons/United Kingdom.png" alt="English" width="24" height="24"></summary>
+                        <div class="mil-lang-dropdown">
+                            <a href="#en"><img src="img/icons/United Kingdom.png" alt="English" width="24" height="24"><span>EN</span></a>
+                            <a href="#bg"><img src="img/icons/Bulgaria.png" alt="Български" width="24" height="24"><span>BG</span></a>
+                        </div>
+                    </details>
+                    <a href="contact.html" class="mil-nav-cta" data-i18n="common.nav.contactUs">Contact us</a>
+                    <div class="mil-menu-btn">
+                        <span></span>
+                    </div>
                 </div>
             </div>
             <div class="mil-frame-bottom">
@@ -351,9 +385,10 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row alex-cv-work-cards">
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-comments mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card1.title">Direct Communication</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card1.desc">Clear, prompt communication. You always
                                             know where the project stands and what needs your input.</p>
@@ -361,6 +396,7 @@
                                 </div>
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-chart-line mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card2.title">Evidence-Based Decisions</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card2.desc">Decisions backed by research, data, or best
                                             practice. I test and iterate on real insights to reduce risk.</p>
@@ -368,6 +404,7 @@
                                 </div>
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-shield-alt mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card3.title">Full Responsibility</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card3.desc">Full ownership. I fix what's broken and
                                             flag risks early. Your success is my reputation.</p>
@@ -375,6 +412,7 @@
                                 </div>
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-bullseye mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card4.title">Business-Focused Thinking</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card4.desc">Design that serves business goals. User
                                             needs and commercial outcomes in every decision.</p>
@@ -382,6 +420,7 @@
                                 </div>
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-project-diagram mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card5.title">Transparent Process</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card5.desc">You see what I'm doing and why. No black
                                             box; I explain choices and welcome your input.</p>
@@ -389,6 +428,7 @@
                                 </div>
                                 <div class="col-6 col-lg-4 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
+                                        <p class="mil-mb-15"><i class="fas fa-sync-alt mil-accent mil-text-xl" aria-hidden="true"></i></p>
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.work.card6.title">Iterative Collaboration</h4>
                                         <p class="mil-descr mil-up mil-mb-0" data-i18n="cv.work.card6.desc">Staged work, regular shares, early
                                             feedback. Fewer costly surprises and faster alignment.</p>
@@ -401,6 +441,109 @@
 
                     <!-- Experience & Education: white_version-style layout (inline styles only for these 2 sections) -->
                     <style>
+                        /* Scoped to alexander CV – FIX card spacing with grid gap (avoid theme gutter overrides) */
+                        .alex-cv-work-cards {
+                            display: grid !important;
+                            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                            gap: 24px !important;
+                            margin: 0 !important;
+                        }
+
+                        .alex-cv-work-cards > [class*="col-"] {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            width: auto !important;
+                            max-width: none !important;
+                            flex: none !important;
+                            display: block !important;
+                        }
+
+                        @media (max-width: 992px) {
+                            .alex-cv-work-cards {
+                                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                                gap: 18px !important;
+                            }
+                        }
+
+                        @media (max-width: 576px) {
+                            .alex-cv-work-cards {
+                                grid-template-columns: 1fr !important;
+                                gap: 16px !important;
+                            }
+                        }
+
+                        /* Extra breathing room inside cards */
+                        .alex-cv-work-cards .mil-service-card-lg.mil-other-card {
+                            padding: 28px 24px !important;
+                            margin: 0 !important;
+                            width: 100% !important;
+                            text-align: center;
+                        }
+
+                        .alex-cv-work-cards .mil-service-card-lg.mil-other-card .mil-descr {
+                            text-align: center;
+                        }
+
+                        /* Beyond the screen: prevent overflow + add spacing between tiles */
+                        .alex-cv-beyond-gallery {
+                            gap: 24px !important;
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                            overflow-x: hidden;
+                        }
+
+                        .alex-cv-beyond-gallery > [class*="col-"] {
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                        }
+
+                        .alex-cv-beyond-gallery .mil-cover-frame,
+                        .alex-cv-beyond-gallery .mil-cover {
+                            overflow: hidden;
+                        }
+
+                        .alex-cv-beyond-gallery img {
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        /* Fun facts: 4 cards in a row on desktop */
+                        .alex-cv-facts-cards {
+                            display: grid !important;
+                            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+                            gap: 24px !important;
+                            margin: 0 !important;
+                        }
+
+                        .alex-cv-facts-cards > [class*="col-"] {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            width: auto !important;
+                            max-width: none !important;
+                            flex: none !important;
+                            display: block !important;
+                        }
+
+                        @media (max-width: 992px) {
+                            .alex-cv-facts-cards {
+                                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                                gap: 18px !important;
+                            }
+                        }
+
+                        @media (max-width: 576px) {
+                            .alex-cv-facts-cards {
+                                grid-template-columns: 1fr !important;
+                                gap: 16px !important;
+                            }
+                        }
+
+                        .alex-cv-facts-cards .mil-service-card-lg.mil-other-card {
+                            margin: 0 !important;
+                            width: 100% !important;
+                        }
+
                         /* Scoped to alexander CV – Experience & Certifications (white_version look), font: Outfit */
                         .alex-cv-exp-edu {
                             font-family: "Outfit", sans-serif;
@@ -802,7 +945,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 d-flex">
-                                    <div class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                    <div class="mil-service-card-lg mil-other-card mil-mb-30">
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.skills.card1.title">Research & Testing</h4>
                                         <p class="mil-descr mil-up mil-mb-15" data-i18n="cv.skills.card1.desc">User-centred decisions backed by evidence.
                                         </p>
@@ -815,7 +958,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 d-flex">
-                                    <div class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                    <div class="mil-service-card-lg mil-other-card mil-mb-30">
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.skills.card2.title">Design & Prototyping</h4>
                                         <p class="mil-descr mil-up mil-mb-15" data-i18n="cv.skills.card2.desc">From wireframes to high-fidelity UI.</p>
                                         <ul class="mil-service-list mil-dark mil-mb-0">
@@ -827,7 +970,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 d-flex">
-                                    <div class="mil-service-card-lg mil-other-card mil-more mil-mb-30">
+                                    <div class="mil-service-card-lg mil-other-card mil-mb-30">
                                         <h4 class="mil-up mil-mb-15" data-i18n="cv.skills.card3.title">Tools & Delivery</h4>
                                         <p class="mil-descr mil-up mil-mb-15" data-i18n="cv.skills.card3.desc">Industry-standard tools and handoff.</p>
                                         <ul class="mil-service-list mil-dark mil-mb-0">
@@ -864,12 +1007,12 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row justify-content-between align-items-center">
+                            <div class="row justify-content-between align-items-center alex-cv-beyond-gallery">
                                 <div class="col-lg-5">
                                     <div class="mil-portfolio-item mil-mb-60">
                                         <div class="mil-cover-frame mil-vert mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\5.jpg" alt="You are the hero of your own story">
+                                                <img src="img/about/5.webp" alt="You are the hero of your own story">
                                             </div>
                                         </div>
                                     </div>
@@ -879,7 +1022,7 @@
                                     data-value-2="-60">
                                         <div class="mil-cover-frame mil-hori mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\4.jpg" alt="With the mayor of Newcastle Upon Tyne">
+                                                <img src="img/about/4.webp" alt="With the mayor of Newcastle Upon Tyne">
                                             </div>
                                         </div>
                                     </div>
@@ -889,7 +1032,7 @@
                                     data-value-2="-60">
                                         <div class="mil-cover-frame mil-hori mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\6.jpg" alt="Snowboarding">
+                                                <img src="img/about/6.webp" alt="Snowboarding">
                                             </div>
                                         </div>
                                     </div>
@@ -898,7 +1041,7 @@
                                     <div class="mil-portfolio-item mil-mb-60">
                                         <div class="mil-cover-frame mil-vert mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\1.jpg" alt="Snowboarding">
+                                                <img src="img/about/1.webp" alt="Snowboarding">
                                             </div>
                                         </div>
                                     </div>
@@ -907,7 +1050,7 @@
                                     <div class="mil-portfolio-item mil-mb-60">
                                         <div class="mil-cover-frame mil-vert mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\3.jpg" alt="My visit to Santiago Bernabéu Stadium">
+                                                <img src="img/about/3.webp" alt="My visit to Santiago Bernabéu Stadium">
                                             </div>
                                         </div>
                                     </div>
@@ -917,7 +1060,7 @@
                                     data-value-2="-60">
                                         <div class="mil-cover-frame mil-hori mil-up">
                                             <div class="mil-cover">
-                                                <img src="img\about\2.jpg" alt="Scuba diving in Mallorca">
+                                                <img src="img/about/2.webp" alt="Scuba diving in Mallorca">
                                             </div>
                                         </div>
                                     </div>
@@ -936,7 +1079,7 @@
                                     <p class="mil-up mil-dark-soft" data-i18n="cv.facts.intro">Beyond the screen – what keeps me <span class="mil-emphasize">inspired</span> and <span class="mil-emphasize">thinking clearly</span>.</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row alex-cv-facts-cards">
                                 <div class="col-6 col-lg-6 d-flex">
                                     <div class="mil-service-card-lg mil-other-card mil-mb-30">
                                         <p class="mil-mb-15"><i class="fas fa-snowflake mil-accent mil-text-xl" aria-hidden="true"></i></p>
