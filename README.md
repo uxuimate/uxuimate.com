@@ -1,56 +1,51 @@
-# UX UI Mate — Agency Website
+# UX UI Mate - Agency Website
 
-Official website repository for **UX UI Mate** — a UX/UI design, web design, and digital marketing agency.
+Proprietary codebase for the official UX UI Mate agency website (uxuimate.com).
 
-This project contains the source files for the agency website available at **uxuimate.com**.
+UX UI Mate is a UX/UI design and digital growth studio focused on building high-conversion digital experiences, scalable websites, and performance-driven brand systems.
 
-## Overview
+## Scope
 
-UX UI Mate helps businesses improve their digital presence through:
-- UX/UI design
-- Website design and development
-- UX research and strategy
-- Branding and visual identity
-- Digital marketing support
+This repository contains the full front-end implementation of the agency website, including:
 
-The website includes:
-- Main service pages
+- Core marketing pages (Home, Services, About, Contact)
 - Portfolio and case studies
-- About and contact pages
-- Blog and article content
-- Legal pages such as privacy policy, cookie policy, and terms
+- Blog and long-form content (articles)
+- Service-specific landing pages
+- Legal and compliance pages (Privacy, Terms, Cookies)
 
-## Project structure
+## Project Structure
 
 - `index.html` — homepage
-- `about.html` — about page
 - `services.html` — services overview
-- `works.html` — portfolio / work
-- `contact.html` — contact page
-- `blog.html` — blog landing page
-- `articles/` — article content and related assets
-- `css/` — compiled stylesheets
-- `scss/` — source SCSS files
-- `js/` — JavaScript files
-- `img/` — images and visual assets
-- `fonts/` — font files
-- `robots.txt` — search engine crawling rules
-- `sitemap.xml` — sitemap for search engines
+- `works.html` — portfolio / case studies
+- `blog.html` — blog landing
+- `articles/` — article content
+- `css/` — compiled styles
+- `scss/` — source styles (Prepros)
+- `js/` — scripts
+- `img/` — media assets
+- `fonts/` — typography assets
+- `sitemap.xml` — SEO structure
+- `robots.txt` — crawler rules
 
-## Tech stack
+## Stack
 
 - HTML5
-- CSS3
-- SCSS
+- CSS3 / SCSS
 - JavaScript
 
-## Purpose
+## Deployment
 
-This repository is maintained as the main codebase for the UX UI Mate agency website and related content pages.
+Deployed via GitHub and connected to domain infrastructure (Namecheap).
 
-## Rights
+## Status
+
+Production-ready. Actively maintained and iterated.
+
+## Legal
 
 © UX UI Mate. All rights reserved.
 
-This repository and its contents are proprietary.  
-No part of this codebase, design, content, or assets may be copied, modified, distributed, published, or reused without prior written permission.
+This repository is proprietary and confidential.  
+Unauthorized use, reproduction, or distribution of any part of this codebase or its contents is strictly prohibited.
