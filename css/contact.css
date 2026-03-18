@@ -1,0 +1,142 @@
+/**
+ * Contact page – project type, budget, thank-you
+ * Reuses existing utilities: mil-mb-15, mil-mb-20, mil-mb-30, mil-mb-60, mil-text-sm, mil-upper, mil-muted
+ */
+
+/* Form error box – white background, thin light gray border */
+#contact .mil-form-error-box {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#contact .mil-form-error-box p {
+  margin: 0;
+}
+
+/* Map image – replace iframe with logo */
+.mil-map-frame .mil-map.mil-map-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mil-map-frame .mil-map.mil-map-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Project type & budget blocks */
+#contact .mil-form-block {
+  margin-bottom: 60px;
+}
+
+/* Project type – radio row, reuses mil-upper, mil-muted, mil-text-sm */
+#contact .mil-contact-radio-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+#contact .mil-contact-radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#contact .mil-contact-radio-label input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+#contact .mil-contact-radio-label .mil-contact-radio-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: 12px;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+#contact .mil-contact-radio-label input:checked + .mil-contact-radio-dot {
+  background: rgb(0, 0, 0);
+}
+
+#contact .mil-contact-radio-label:hover .mil-contact-radio-dot {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Budget slider – horizontal track */
+#contact .mil-budget-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#contact .mil-budget-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+#contact .mil-budget-track::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  top: 7px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+#contact .mil-budget-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+#contact .mil-budget-radio {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#contact .mil-budget-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+#contact .mil-budget-marker:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#contact .mil-budget-wrap:has(#budget-under-5k:checked) .mil-budget-marker[data-value="under-5k"],
+#contact .mil-budget-wrap:has(#budget-5-10k:checked) .mil-budget-marker[data-value="5-10k"],
+#contact .mil-budget-wrap:has(#budget-10-25k:checked) .mil-budget-marker[data-value="10-25k"],
+#contact .mil-budget-wrap:has(#budget-25k-plus:checked) .mil-budget-marker[data-value="25k-plus"] {
+  background: rgb(0, 0, 0);
+}

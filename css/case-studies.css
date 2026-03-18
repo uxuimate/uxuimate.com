@@ -1,0 +1,119 @@
+/* Before/After Image Slider – case study pages */
+.mil-image-frame .mil-before-after-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+}
+
+.mil-before-after-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mil-before-after-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.mil-before-after-after img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    display: block;
+}
+
+.mil-before-after-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+
+.mil-before-after-before img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    display: block;
+}
+
+.mil-before-after-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--mil-accent, #E5526A);
+    z-index: 3;
+    transform: translateX(-50%);
+    cursor: col-resize;
+}
+
+.mil-before-after-handle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: var(--mil-accent, #E5526A);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mil-before-after-handle::after {
+    content: '◀ ▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.mil-before-after-label {
+    position: absolute;
+    top: 20px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.mil-before-after-label.mil-before-label {
+    left: 20px;
+}
+
+.mil-before-after-label.mil-after-label {
+    right: 20px;
+}
