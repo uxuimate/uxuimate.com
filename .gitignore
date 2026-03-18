@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.cursor/
+
+# Logs
+*.log
+
+# Prepros (your setup)
+.prepros-cache/
+prepros.config
+
+# SCSS source maps (optional)
+*.map
+
+# Temporary files
+*.tmp
+*.temp
+
+# Mac hidden files
+._*
