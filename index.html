@@ -8,8 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- favicon -->
-        <link rel="icon" href="img/icons/favicon.jpg" type="image/jpeg">
-        <link rel="apple-touch-icon" href="img/icons/favicon.jpg">
+        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/favicon.jpg">
 
         <!-- bootstrap grid css -->
         <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
@@ -41,21 +41,34 @@
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "UX UI MATE",
-          "url": "https://uxuimate.com/",
-          "logo": "https://uxuimate.com/img/icons/logo%20-%20footer.png",
-          "sameAs": [
-            "https://www.linkedin.com/in/uxalexander/",
-            "https://www.behance.net/uxuimate",
-            "https://dribbble.com/uxuimate",
-            "https://medium.com/@uxuimate"
-          ],
-          "contactPoint": [{
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "email": "uxuimate@gmail.com"
-          }]
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://uxuimate.com/#website",
+              "name": "UX UI MATE",
+              "url": "https://uxuimate.com/",
+              "inLanguage": "en-GB",
+              "publisher": { "@id": "https://uxuimate.com/#organization" }
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://uxuimate.com/#organization",
+              "name": "UX UI MATE",
+              "url": "https://uxuimate.com/",
+              "logo": "https://uxuimate.com/img/icons/logo%20-%20footer.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/uxalexander/",
+                "https://www.behance.net/uxuimate",
+                "https://dribbble.com/uxuimate",
+                "https://medium.com/@uxuimate"
+              ],
+              "contactPoint": [{
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "uxuimate@gmail.com"
+              }]
+            }
+          ]
         }
         </script>
 
