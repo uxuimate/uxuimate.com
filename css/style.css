@@ -856,6 +856,9 @@ backgrounds
 body.mil-theme-dark {
   --mil-dark-accent: #ff9800;
   --mil-dark-headline: #ffeef3;
+  /* Page chrome + any gap outside .mil-content (mobile safe area, etc.) */
+  background-color: #0d0d0d;
+  color: rgba(255, 255, 255, 0.85);
 }
 body.mil-theme-dark .mil-content {
   background-color: #0d0d0d;
@@ -863,8 +866,9 @@ body.mil-theme-dark .mil-content {
   --mil-dark-accent: #ff9800;
   --mil-dark-headline: #ffeef3;
 }
-body.mil-theme-dark .mil-content section.mil-white-bg,
-body.mil-theme-dark .mil-content section.mil-soft-bg {
+/* Any wrapper can use .mil-white-bg / .mil-soft-bg (div or section): all must go dark */
+body.mil-theme-dark .mil-content .mil-white-bg,
+body.mil-theme-dark .mil-content .mil-soft-bg {
   background-color: #0d0d0d;
 }
 body.mil-theme-dark .mil-content .mil-dark {
@@ -1019,13 +1023,15 @@ body.mil-theme-dark .mil-content .mil-price-card .mil-descr {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Dark mode slider cards (research methods and similar sections) */
-body.mil-theme-dark .mil-content .mil-portfolio-item.mil-slider-item .mil-descr,
-body.mil-theme-dark .mil-content .mil-portfolio-nav {
+/* Dark mode slider: description panel + nav (same treatment as UX Research on all pages) */
+body.mil-theme-dark .mil-content .mil-portfolio-item.mil-slider-item .mil-descr {
   background-color: #14141a;
 }
+/* Nav strip + pill blend with page background: not a separate grey box */
+body.mil-theme-dark .mil-content .mil-portfolio-nav,
 body.mil-theme-dark .mil-content .mil-portfolio-nav .mil-portfolio-btns-frame {
-  background-color: #1c1c24;
+  background: transparent;
+  box-shadow: none;
 }
 body.mil-theme-dark .mil-content .mil-portfolio-item.mil-slider-item .mil-descr p {
   color: rgba(255, 255, 255, 0.82);
@@ -1033,15 +1039,12 @@ body.mil-theme-dark .mil-content .mil-portfolio-item.mil-slider-item .mil-descr 
 body.mil-theme-dark .mil-content .mil-portfolio-item.mil-slider-item .mil-descr h4 {
   color: rgba(255, 255, 255, 0.95);
 }
-
-/* Service pages methods slider: blend only controls section in dark mode */
-body.mil-theme-dark .mil-content .service-methods-mobile .mil-portfolio-nav,
-body.mil-theme-dark .mil-content .service-methods-mobile .mil-portfolio-nav .mil-portfolio-btns-frame {
-  background: transparent;
-  box-shadow: none;
-}
-body.mil-theme-dark .mil-content .service-methods-mobile .swiper-portfolio-pagination {
+body.mil-theme-dark .mil-content .swiper-portfolio-pagination {
   color: rgba(255, 255, 255, 0.92);
+}
+/* Prev on slide 1 uses .swiper-button-disabled: default opacity 0.1 is illegible in dark mode */
+body.mil-theme-dark .mil-content .mil-portfolio-nav .mil-slider-arrow.swiper-button-disabled {
+  opacity: 0.42;
 }
 
 /* Dark mode quick guide accordion readability */

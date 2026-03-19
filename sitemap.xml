@@ -84,7 +84,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Bomi%20Clima/Laptop%201%20Vertical.jpg</image:loc>
-      <image:title>Bomi Clima — e‑commerce case study</image:title>
+      <image:title>Bomi Clima: e‑commerce case study</image:title>
     </image:image>
   </url>
   <url>
@@ -94,7 +94,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Soft%20Play%20Solutions/3%20Vertical.jpg</image:loc>
-      <image:title>Soft Play Solutions — web design case study</image:title>
+      <image:title>Soft Play Solutions: web design case study</image:title>
     </image:image>
   </url>
   <url>
@@ -104,7 +104,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Eco%20Herbalist%20UX%20Design/Blog%20Horizontall.jpg</image:loc>
-      <image:title>Eco Herbalist — UX/UI case study</image:title>
+      <image:title>Eco Herbalist: UX/UI case study</image:title>
     </image:image>
   </url>
   <url>
@@ -114,11 +114,11 @@
     <priority>0.65</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Healthy%20Eats/01.jpg</image:loc>
-      <image:title>Healthy Eats — product UI redesign case study</image:title>
+      <image:title>Healthy Eats: product UI redesign case study</image:title>
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://uxuimate.com/img/works/Healthy%20Eats/01.jpg</video:thumbnail_loc>
-      <video:title>Healthy Eats app redesign — hero video</video:title>
+      <video:title>Healthy Eats app redesign: hero video</video:title>
       <video:description>Screen recording of the Healthy Eats product UI redesign showcased on the UX UI MATE case study page.</video:description>
       <video:content_loc>https://uxuimate.com/img/works/Healthy%20Eats/Healthy%20Eats%20Web.mp4</video:content_loc>
       <video:family_friendly>yes</video:family_friendly>
@@ -132,7 +132,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Eco%20Herbalist%20Branding/2.jpg</image:loc>
-      <image:title>Eco Herbalist — branding case study</image:title>
+      <image:title>Eco Herbalist: branding case study</image:title>
     </image:image>
   </url>
   <url>
@@ -142,7 +142,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://uxuimate.com/img/works/Cinematic%20Escapes/3.jpg</image:loc>
-      <image:title>Cinematic Escapes — visual design</image:title>
+      <image:title>Cinematic Escapes: visual design</image:title>
     </image:image>
   </url>
   <url>
