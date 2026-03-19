@@ -853,6 +853,10 @@ backgrounds
 }
 
 /* dark theme: reuses .mil-dark / .mil-dark-soft semantics; footer unchanged */
+body.mil-theme-dark {
+  --mil-dark-accent: #ff9800;
+  --mil-dark-headline: #ffeef3;
+}
 body.mil-theme-dark .mil-content {
   background-color: #0d0d0d;
   color: rgba(255, 255, 255, 0.85);
@@ -973,12 +977,21 @@ body.mil-theme-dark .mil-link.mil-accent svg path {
   fill: #121216;
 }
 body.mil-theme-dark .mil-frame .mil-frame-top .mil-nav-cta {
-  background: var(--mil-dark-accent);
+  background: var(--mil-dark-accent) !important;
   color: #121216;
+  /* match light-mode look: no extra non-hover outline */
+  box-shadow: none !important;
+  outline: none !important;
 }
 body.mil-theme-dark .mil-frame .mil-frame-top .mil-nav-cta:hover {
-  background: #e18900;
+  background: #e18900 !important;
   color: #121216;
+}
+
+body.mil-theme-dark .mil-frame .mil-frame-top .mil-nav-cta:focus-visible {
+  /* match light-mode look (no extra non-hover ring) */
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* Dark mode cards/surfaces: keep components consistent with dark theme */
@@ -2384,6 +2397,14 @@ circle text
 }
 .mil-circle-text.mil-circle-text-light:hover svg text {
   fill: rgba(0, 0, 0, 1);
+}
+
+/* Dark mode: circle scroll-down text should stay light */
+body.mil-theme-dark .mil-content .mil-circle-text.mil-circle-text-light .mil-ct-svg text {
+  fill: rgba(255, 255, 255, 0.4);
+}
+body.mil-theme-dark .mil-content .mil-circle-text.mil-circle-text-light:hover svg text {
+  fill: rgb(255, 255, 255);
 }
 @media screen and (max-width: 992px) {
   .mil-circle-text {
