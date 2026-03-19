@@ -38,9 +38,20 @@ $(function () {
 
     ***************************/
 
-    var accent = '#E5526A';
+    var accentLight = '#E5526A';
+    var accentDark = '#ff9800';
+    var accent = accentLight;
     var dark = '#000';
     var light = '#fff';
+    var accordionSymbolBase = 'rgb(229, 229, 229)';
+
+    function getAccentColor() {
+        return $('body').hasClass('mil-theme-dark') ? accentDark : accentLight;
+    }
+
+    function getAccordionSymbolBaseColor() {
+        return $('body').hasClass('mil-theme-dark') ? '#1d1d25' : accordionSymbolBase;
+    }
 
     /***************************
 
@@ -172,6 +183,10 @@ $(function () {
         let minusElement = element.querySelector(".mil-minus");
         let plusElement = element.querySelector(".mil-plus");
 
+        gsap.set(symbol, {
+            background: getAccordionSymbolBaseColor(),
+        });
+
         gsap.set(box, {
             height: "auto",
         });
@@ -194,13 +209,24 @@ $(function () {
                 ease: "none",
             }, 0)
             .to(symbol, {
-                background: accent,
+                background: getAccentColor(),
                 ease: "none",
             }, 0)
             .reverse();
 
+        animation.eventCallback("onReverseComplete", function () {
+            gsap.set(symbol, {
+                background: getAccordionSymbolBaseColor(),
+            });
+        });
+
         return function (clickedMenu) {
             if (clickedMenu === menu) {
+                if (animation.reversed()) {
+                    gsap.set(symbol, {
+                        background: getAccentColor(),
+                    });
+                }
                 animation.reversed(!animation.reversed());
             } else {
                 animation.reverse();
@@ -384,6 +410,7 @@ $(function () {
             $('body').removeClass('mil-theme-dark');
             $('.mil-nav-theme-toggle i').removeClass('fa-moon').addClass('fa-sun');
         }
+        accent = getAccentColor();
         try { localStorage.setItem('mil-theme', isDark ? 'dark' : 'light'); } catch (e) {}
     }
     function initTheme() {
@@ -554,6 +581,18 @@ $(function () {
         speed: 800,
         effect: 'fade',
         parallax: true,
+        autoHeight: true,
+        on: {
+            init: function () {
+                this.updateAutoHeight(0);
+            },
+            slideChangeTransitionStart: function () {
+                this.updateAutoHeight(300);
+            },
+            resize: function () {
+                this.updateAutoHeight(0);
+            }
+        },
         navigation: {
             nextEl: '.mil-revi-next',
             prevEl: '.mil-revi-prev',
@@ -717,6 +756,10 @@ $(function () {
             let minusElement = element.querySelector(".mil-minus");
             let plusElement = element.querySelector(".mil-plus");
 
+            gsap.set(symbol, {
+                background: getAccordionSymbolBaseColor(),
+            });
+
             gsap.set(box, {
                 height: "auto",
             });
@@ -739,13 +782,24 @@ $(function () {
                     ease: "none",
                 }, 0)
                 .to(symbol, {
-                    background: accent,
+                    background: getAccentColor(),
                     ease: "none",
                 }, 0)
                 .reverse();
 
+            animation.eventCallback("onReverseComplete", function () {
+                gsap.set(symbol, {
+                    background: getAccordionSymbolBaseColor(),
+                });
+            });
+
             return function (clickedMenu) {
                 if (clickedMenu === menu) {
+                    if (animation.reversed()) {
+                        gsap.set(symbol, {
+                            background: getAccentColor(),
+                        });
+                    }
                     animation.reversed(!animation.reversed());
                 } else {
                     animation.reverse();
@@ -999,6 +1053,18 @@ $(function () {
             speed: 800,
             effect: 'fade',
             parallax: true,
+            autoHeight: true,
+            on: {
+                init: function () {
+                    this.updateAutoHeight(0);
+                },
+                slideChangeTransitionStart: function () {
+                    this.updateAutoHeight(300);
+                },
+                resize: function () {
+                    this.updateAutoHeight(0);
+                }
+            },
             navigation: {
                 nextEl: '.mil-revi-next',
                 prevEl: '.mil-revi-prev',
