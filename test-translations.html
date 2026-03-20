@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Translations</title>
+</head>
+<body>
+    <h1>Testing Translations Load</h1>
+    <div id="result"></div>
+    
+    <script src="js/translations.js"></script>
+    <script>
+        const resultDiv = document.getElementById('result');
+        
+        try {
+            if (typeof window.UXUI_TRANSLATIONS === 'undefined') {
+                resultDiv.innerHTML = '<p style="color: red;"><strong>ERROR:</strong> window.UXUI_TRANSLATIONS is undefined</p>';
+                resultDiv.innerHTML += '<p>The translations.js file did not load correctly. Check browser console for syntax errors.</p>';
+            } else {
+                const en = window.UXUI_TRANSLATIONS.en;
+                const bg = window.UXUI_TRANSLATIONS.bg;
+                
+                if (!en) {
+                    resultDiv.innerHTML += '<p style="color: red;">English (en) translations missing</p>';
+                } else {
+                    resultDiv.innerHTML += '<p style="color: green;">✓ English translations loaded: ' + Object.keys(en).length + ' keys</p>';
+                }
+                
+                if (!bg) {
+                    resultDiv.innerHTML += '<p style="color: red;">Bulgarian (bg) translations missing</p>';
+                } else {
+                    resultDiv.innerHTML += '<p style="color: green;">✓ Bulgarian translations loaded: ' + Object.keys(bg).length + ' keys</p>';
+                }
+                
+                // Test some specific keys
+                if (en && en['common.nav.homepage']) {
+                    resultDiv.innerHTML += '<p>✓ English home key: ' + en['common.nav.homepage'] + '</p>';
+                }
+                if (bg && bg['common.nav.homepage']) {
+                    resultDiv.innerHTML += '<p>✓ Bulgarian home key: ' + bg['common.nav.homepage'] + '</p>';
+                }
+                
+                resultDiv.innerHTML += '<p style="color: green; font-weight: bold;">SUCCESS: All translations loaded correctly!</p>';
+            }
+        } catch (error) {
+            resultDiv.innerHTML = '<p style="color: red;"><strong>ERROR:</strong> ' + error.message + '</p>';
+            resultDiv.innerHTML += '<p>Check the browser console (F12) for more details.</p>';
+            console.error('Translations error:', error);
+        }
+    </script>
+</body>
+</html>

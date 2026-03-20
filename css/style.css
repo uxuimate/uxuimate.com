@@ -5633,3 +5633,13 @@ html[lang="bg"] .fab {
     row-gap: 20px;
   }
 }
+
+/* Language switcher (EN/BG flags): hidden while Bulgarian copy is WIP.
+   i18n markup and scripts stay loaded — delete this block to show flags again. */
+.mil-frame .mil-frame-top .mil-lang-switcher,
+.mil-frame .mil-frame-top .mil-lang-mobile {
+  display: none !important;
+}
+.mil-frame .mil-frame-top .mil-nav-actions > .mil-nav-theme-toggle + .mil-nav-sep {
+  display: none !important;
+}
