@@ -19,6 +19,7 @@ p.s. I am available for Freelance hire (UI design, web development). email: mill
     - breadcrumbs
     - backgrounds
     - spaces
+    - geometric ornaments (CSS variables)
 2. components
     - preloader
     - cursor
@@ -852,10 +853,31 @@ backgrounds
   background-color: rgb(255, 255, 255);
 }
 
+/*
+ * Geometric ornaments — design tokens
+ * - --mil-geo-wire: 3D dodecahedron edges in main content (.mil-content)
+ * - --mil-geo-wire-panel: same shape on dark surfaces (e.g. fullscreen menu)
+ * - --mil-geo-lines-*: tall SVG (.mil-lines) cloned into .mil-lines-place
+ * Dark theme flips these to the site accent (yellow) via body.mil-theme-dark.
+ */
+:root {
+  --mil-geo-wire: rgba(0, 0, 0, 0.42);
+  --mil-geo-wire-panel: rgba(255, 255, 255, 0.9);
+  --mil-geo-lines-opacity: 0.06;
+  --mil-geo-lines-stroke: rgba(0, 0, 0, 0.88);
+  --mil-geo-lines-fill: transparent;
+  --mil-geo-lines-stroke-width: 1px;
+}
+
 /* dark theme: reuses .mil-dark / .mil-dark-soft semantics; footer unchanged */
 body.mil-theme-dark {
   --mil-dark-accent: #ff9800;
   --mil-dark-headline: #ffeef3;
+  --mil-geo-wire: var(--mil-dark-accent);
+  --mil-geo-wire-panel: var(--mil-dark-accent);
+  --mil-geo-lines-opacity: 0.5;
+  --mil-geo-lines-stroke: var(--mil-dark-accent);
+  --mil-geo-lines-fill: color-mix(in srgb, var(--mil-dark-accent) 14%, transparent);
   /* Page chrome + any gap outside .mil-content (mobile safe area, etc.) */
   background-color: #0d0d0d;
   color: rgba(255, 255, 255, 0.85);
@@ -950,9 +972,6 @@ body.mil-theme-dark .mil-content .mil-tag {
 body.mil-theme-dark .mil-content .mil-social-icons.mil-dark li a {
   color: rgb(255, 255, 255);
 }
-body.mil-theme-dark .mil-content .mil-position-4.mil-dark .mil-pentagon div {
-  border-top-color: rgba(255, 255, 255, 0.2);
-}
 body.mil-theme-dark .mil-content .mil-divider {
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -996,6 +1015,31 @@ body.mil-theme-dark .mil-frame .mil-frame-top .mil-nav-cta:focus-visible {
   /* match light-mode look (no extra non-hover ring) */
   box-shadow: none !important;
   outline: none !important;
+}
+
+/* Active nav labels: same yellow as CTAs in dark mode (not brand pink) */
+body.mil-theme-dark .mil-main-menu ul li a.mil-active:before {
+  background-color: var(--mil-dark-accent);
+}
+body.mil-theme-dark .mil-main-menu ul li.mil-active > a,
+body.mil-theme-dark .mil-main-menu ul li.mil-active > a:hover {
+  color: var(--mil-dark-accent) !important;
+  -webkit-filter: none;
+          filter: none;
+}
+body.mil-theme-dark .mil-footer-menu ul li.mil-active a {
+  color: var(--mil-dark-accent);
+}
+body.mil-theme-dark .mil-footer-menu ul li a:hover {
+  color: var(--mil-dark-accent);
+}
+body.mil-theme-dark .mil-category-list li a.mil-active {
+  background-color: var(--mil-dark-accent);
+  color: #121216;
+}
+body.mil-theme-dark .mil-pagination-btn.mil-active {
+  background-color: var(--mil-dark-accent);
+  color: #121216;
 }
 
 /* Dark mode cards/surfaces: keep components consistent with dark theme */
@@ -2449,7 +2493,7 @@ lines
   }
 }
 .mil-lines-place .mil-lines {
-  opacity: 0.05;
+  opacity: var(--mil-geo-lines-opacity);
   pointer-events: none;
 }
 @media screen and (max-width: 992px) {
@@ -2457,8 +2501,12 @@ lines
     display: none;
   }
 }
-.mil-lines-place .mil-lines path, .mil-lines-place .mil-lines rect, .mil-lines-place .mil-lines line {
-  stroke: rgb(0, 0, 0);
+.mil-lines-place .mil-lines path,
+.mil-lines-place .mil-lines rect,
+.mil-lines-place .mil-lines line {
+  stroke: var(--mil-geo-lines-stroke);
+  stroke-width: var(--mil-geo-lines-stroke-width);
+  fill: var(--mil-geo-lines-fill);
 }
 .mil-lines-place .mil-lines .mil-move {
   -webkit-animation: move 10s linear infinite;
@@ -2467,8 +2515,10 @@ lines
 .mil-lines-place.mil-light .mil-lines {
   opacity: 0.2;
 }
-.mil-lines-place.mil-light .mil-lines path, .mil-lines-place.mil-light .mil-lines rect, .mil-lines-place.mil-light .mil-lines line {
-  stroke: rgb(255, 255, 255);
+.mil-lines-place.mil-light .mil-lines path,
+.mil-lines-place.mil-light .mil-lines rect,
+.mil-lines-place.mil-light .mil-lines line {
+  stroke: var(--mil-geo-wire-panel);
 }
 
 /* -------------------------------------------
@@ -2500,7 +2550,8 @@ dodecahedron
   right: 100px;
 }
 .mil-position-1 .mil-pentagon div {
-  border-top: 0.1px solid rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 0.1px;
 }
 
 .mil-position-2 {
@@ -2508,7 +2559,8 @@ dodecahedron
   left: 15%;
 }
 .mil-position-2 .mil-pentagon div {
-  border-top: 1px solid rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 .mil-position-2 .mil-dodecahedron {
   -webkit-animation-delay: 0.5s;
@@ -2525,7 +2577,8 @@ dodecahedron
   right: 35%;
 }
 .mil-position-3 .mil-pentagon div {
-  border-top: 1px solid rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 .mil-position-3 .mil-dodecahedron {
   -webkit-animation-delay: 1s;
@@ -2542,7 +2595,8 @@ dodecahedron
   right: 20%;
 }
 .mil-position-4 .mil-pentagon div {
-  border-top: 0.1px solid rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 0.1px;
 }
 .mil-position-4 .mil-dodecahedron {
   -webkit-animation-delay: 0.5s;
@@ -2553,8 +2607,13 @@ dodecahedron
     display: none;
   }
 }
-.mil-position-4.mil-dark .mil-pentagon div {
-  border-top: 0.1px solid rgb(0, 0, 0);
+
+/* 3D wire colours: --mil-geo-wire / --mil-geo-wire-panel (see :root + body.mil-theme-dark) */
+.mil-content .mil-animation-frame .mil-animation .mil-pentagon div {
+  border-top-color: var(--mil-geo-wire);
+}
+.mil-menu-frame .mil-animation-frame .mil-animation .mil-pentagon div {
+  border-top-color: var(--mil-geo-wire-panel);
 }
 
 .mil-dodecahedron {
@@ -5435,14 +5494,7 @@ html[lang="bg"] .mil-banner.mil-white-bg .mil-banner-content h1 {
   .mil-banner .mil-position-4 .mil-pentagon div,
   .mil-banner-personal .mil-position-4 .mil-pentagon div {
     border-top-width: 1px !important;
-    border-top-color: rgba(0, 0, 0, 0.46) !important;
-  }
-
-  body.mil-theme-dark .mil-content .mil-inner-banner .mil-position-4.mil-dark .mil-pentagon div,
-  body.mil-theme-dark .mil-content .mil-banner .mil-position-4.mil-dark .mil-pentagon div,
-  body.mil-theme-dark .mil-content .mil-banner-personal .mil-position-4.mil-dark .mil-pentagon div {
-    border-top-width: 1px !important;
-    border-top-color: rgba(255, 152, 0, 0.92) !important;
+    border-top-color: var(--mil-geo-wire) !important;
   }
 
   /* Breadcrumbs: prevent overflow on long labels */

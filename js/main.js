@@ -155,6 +155,7 @@ $(function () {
     $(document).ready(function () {
         $(".mil-arrow").clone().appendTo(".mil-arrow-place");
         $(".mil-dodecahedron").clone().appendTo(".mil-animation");
+        $(".mil-lines-place .mil-lines").remove();
         $(".mil-lines").clone().appendTo(".mil-lines-place");
         $(".mil-main-menu ul li.mil-active > a").clone().appendTo(".mil-current-page");
     });
@@ -726,6 +727,7 @@ $(function () {
         ***************************/
         $(document).ready(function () {
             $(".mil-arrow-place .mil-arrow, .mil-animation .mil-dodecahedron, .mil-current-page a").remove();
+            $(".mil-lines-place .mil-lines").remove();
             $(".mil-arrow").clone().appendTo(".mil-arrow-place");
             $(".mil-dodecahedron").clone().appendTo(".mil-animation");
             $(".mil-lines").clone().appendTo(".mil-lines-place");
