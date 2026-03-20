@@ -206,10 +206,10 @@ window.UXUI_TRANSLATIONS = {
         'contact.support.a1_1': 'Yes. We provide support for up to 30 days after delivery so everything launches smoothly.',
         'contact.support.a1_2': 'After that, we can continue on an hourly basis for improvements, maintenance, or additional requests.',
 
-        // Alexander CV page
+        // Founder page (Alexander)
         'cv.breadcrumb.home': 'Homepage',
-        'cv.breadcrumb.cv': 'CV Alexander',
-        'cv.hero.hello': 'Hello! My name is',
+        'cv.breadcrumb.cv': 'Founder',
+        'cv.hero.hello': 'Founder & Creative Director, UX UI MATE',
         'cv.hero.tagline': 'You\'re one decision away from a strategic partner who treats your users like gold and your revenue like our own. We make your competitors nervous for a living. Brutal ROI. Beautiful design.',
         'cv.hero.moreStudio': 'More about our studio',
         'cv.hero.ready': 'Ready to dominate your market?',
@@ -945,8 +945,8 @@ window.UXUI_TRANSLATIONS = {
         'contact.support.a1_2': 'След това можем да продължим на почасова основа за подобрения, поддръжка или допълнителни заявки.',
 
         'cv.breadcrumb.home': 'Начало',
-        'cv.breadcrumb.cv': 'CV Александър',
-        'cv.hero.hello': 'Здравейте! Казвам се',
+        'cv.breadcrumb.cv': 'Основател',
+        'cv.hero.hello': 'Основател и креативен директор, UX UI MATE',
         'cv.hero.tagline': 'На една стъпка сте от стратегически партньор, който мисли за потребителите и резултата ви като за свои. Ясна позиция. Чист дизайн. Измерим ефект.',
         'cv.hero.moreStudio': 'Повече за нашето студио',
         'cv.hero.ready': 'Готови ли сте да изпреварите конкуренцията?',
