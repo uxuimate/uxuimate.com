@@ -1,12 +1,6 @@
 /* -------------------------------------------
-
-Name: 		Ruizarch
-Version:    1.0
-Developer:	Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
-
-p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
-
+   UX UI MATE — https://uxuimate.com
+   uxuimate@gmail.com
 ------------------------------------------- */
 
 $(function () {
@@ -1164,3 +1158,124 @@ $(function () {
     });
 
 });
+
+/* -------------------------------------------
+   Free UX audit popup: after delay on each full page load. If the visitor closes it,
+   stay hidden while they move around via Swup; show again after refresh or new browser session.
+   ------------------------------------------- */
+(function () {
+    "use strict";
+
+    var DELAY_MS = 18000;
+    var onEscape;
+    var scheduled;
+    var popupTimerId = null;
+    /** True after user closes the overlay (or it’s closed on SPA nav); resets on full reload only. */
+    var suppressedUntilNextLoad = false;
+
+    function getPopup() {
+        return document.getElementById("mil-first-visit-popup");
+    }
+
+    function applyI18nToPopup() {
+        if (window.UXUI_i18n && typeof window.UXUI_i18n.apply === "function") {
+            window.UXUI_i18n.apply(window.UXUI_i18n.getLang());
+        }
+    }
+
+    function ensurePopup() {
+        var el = getPopup();
+        if (el) return el;
+        el = document.createElement("div");
+        el.id = "mil-first-visit-popup";
+        el.className = "mil-first-visit-popup";
+        el.setAttribute("aria-hidden", "true");
+        el.setAttribute("aria-modal", "true");
+        el.setAttribute("role", "dialog");
+        el.setAttribute("aria-labelledby", "mil-popup-audit-title");
+        el.innerHTML =
+            '<div class="mil-first-visit-popup__card">' +
+            '<button type="button" class="mil-first-visit-popup__close" data-popup-close ' +
+            'data-i18n-aria-label="common.popup.audit.closeAria" aria-label="Close offer">&times;</button>' +
+            '<h2 id="mil-popup-audit-title" class="mil-first-visit-popup__title" data-i18n="common.footer.getFreeAudit">Get free UX Audit</h2>' +
+            '<p class="mil-first-visit-popup__lead" data-i18n="common.popup.audit.lead"></p>' +
+            '<form class="mil-subscribe-form" action="https://formsubmit.co/uxuimate@gmail.com" method="POST">' +
+            '<input type="hidden" name="_subject" value="Free UX Audit">' +
+            '<input type="email" name="email" required data-i18n-placeholder="common.footer.enterYourEmail" placeholder="Enter your email">' +
+            '<button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button></form>' +
+            '<button type="button" class="mil-first-visit-popup__dismiss" data-popup-close data-i18n="common.popup.audit.dismiss">Not now</button>' +
+            "</div>";
+        document.body.appendChild(el);
+        applyI18nToPopup();
+        return el;
+    }
+
+    function showPopup() {
+        if (suppressedUntilNextLoad) return;
+        var popup = ensurePopup();
+        if (!popup) return;
+        popup.classList.add("mil-popup-visible");
+        popup.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        onEscape = function (e) {
+            if (e.key === "Escape") hidePopup();
+        };
+        document.addEventListener("keydown", onEscape);
+    }
+
+    function hidePopup() {
+        suppressedUntilNextLoad = true;
+        if (popupTimerId != null) {
+            clearTimeout(popupTimerId);
+            popupTimerId = null;
+        }
+        var popup = getPopup();
+        if (!popup) return;
+        popup.classList.remove("mil-popup-visible");
+        popup.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (onEscape) {
+            document.removeEventListener("keydown", onEscape);
+            onEscape = null;
+        }
+    }
+
+    function bindClose() {
+        var popup = getPopup();
+        if (!popup) return;
+        var closers = popup.querySelectorAll("[data-popup-close]");
+        for (var i = 0; i < closers.length; i++) {
+            closers[i].addEventListener("click", function (ev) {
+                ev.preventDefault();
+                hidePopup();
+            });
+        }
+        popup.addEventListener("click", function (e) {
+            if (e.target === popup) hidePopup();
+        });
+    }
+
+    function init() {
+        if (scheduled) return;
+        scheduled = true;
+        ensurePopup();
+        bindClose();
+        popupTimerId = setTimeout(function () {
+            popupTimerId = null;
+            showPopup();
+        }, DELAY_MS);
+    }
+
+    document.addEventListener("swup:contentReplaced", function () {
+        var p = getPopup();
+        if (p && p.classList.contains("mil-popup-visible")) {
+            hidePopup();
+        }
+    });
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})();

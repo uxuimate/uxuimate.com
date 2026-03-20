@@ -1,12 +1,6 @@
 /* -------------------------------------------
-
-Name: 		Ruizarch
-Version:    1.0
-Developer:	Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
-
-p.s. I am available for Freelance hire (UI design, web development). email: miller.themes@gmail.com
-
+   UX UI MATE — https://uxuimate.com
+   uxuimate@gmail.com
 ------------------------------------------- */
 /*--------------------------------------------
 
@@ -5684,6 +5678,150 @@ html[lang="bg"] .fab {
   .mil-other-services-row {
     row-gap: 20px;
   }
+}
+
+/* First-visit free UX audit modal (injected by main.js if absent) */
+.mil-first-visit-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.mil-first-visit-popup.mil-popup-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.mil-first-visit-popup__card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 28px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+  -webkit-transform: translateY(20px) scale(0.98);
+          transform: translateY(20px) scale(0.98);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mil-first-visit-popup.mil-popup-visible .mil-first-visit-popup__card {
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+}
+body.mil-theme-dark .mil-first-visit-popup__card {
+  background: rgba(24, 24, 30, 0.97);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+}
+.mil-first-visit-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.07);
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+body.mil-theme-dark .mil-first-visit-popup__close {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.88);
+}
+.mil-first-visit-popup__close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+body.mil-theme-dark .mil-first-visit-popup__close:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.mil-first-visit-popup__title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #121216;
+  margin: 0 40px 10px 0;
+  line-height: 1.25;
+}
+body.mil-theme-dark .mil-first-visit-popup__title {
+  color: var(--mil-dark-headline, #ffeef3);
+}
+.mil-first-visit-popup__lead {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: rgba(0, 0, 0, 0.62);
+  margin: 0 0 22px;
+}
+body.mil-theme-dark .mil-first-visit-popup__lead {
+  color: rgba(255, 255, 255, 0.62);
+}
+.mil-first-visit-popup .mil-subscribe-form {
+  margin-bottom: 16px;
+}
+.mil-first-visit-popup .mil-subscribe-form input {
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.mil-first-visit-popup .mil-subscribe-form input:hover,
+.mil-first-visit-popup .mil-subscribe-form input:focus {
+  border-color: rgba(0, 0, 0, 0.38);
+  background-color: #fff;
+  outline: none;
+}
+body.mil-theme-dark .mil-first-visit-popup .mil-subscribe-form input {
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: none;
+}
+body.mil-theme-dark .mil-first-visit-popup .mil-subscribe-form input:hover,
+body.mil-theme-dark .mil-first-visit-popup .mil-subscribe-form input:focus {
+  border-color: rgba(255, 255, 255, 0.38);
+  background-color: rgba(255, 255, 255, 0.09);
+}
+.mil-first-visit-popup__dismiss {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+.mil-first-visit-popup__dismiss:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+body.mil-theme-dark .mil-first-visit-popup__dismiss {
+  color: rgba(255, 255, 255, 0.45);
+}
+body.mil-theme-dark .mil-first-visit-popup__dismiss:hover {
+  color: var(--mil-dark-accent);
 }
 
 /* Language switcher (EN/BG flags): hidden while Bulgarian copy is WIP.
