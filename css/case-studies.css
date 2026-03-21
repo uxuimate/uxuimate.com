@@ -1,3 +1,50 @@
+/* Frames that wrap iframe or before/after (not a direct > img): padding-bottom trick is unreliable on mobile */
+.mil-case-study-media.mil-image-frame.mil-horizontal {
+    padding-bottom: 0;
+    aspect-ratio: 16 / 10.4;
+    min-height: 220px;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 768px) {
+    .mil-case-study-media.mil-image-frame.mil-horizontal {
+        aspect-ratio: 9 / 16;
+        min-height: 320px;
+        max-height: none;
+    }
+}
+
+/* Figma embed (e.g. Healthy Eats): default .mil-horizontal is 65% padding → short on phones; taller box helps contain-scaling fill the iframe */
+@media screen and (max-width: 768px) {
+    .mil-figma-embed-tall-mobile.mil-image-frame.mil-horizontal {
+        padding-bottom: 155%;
+        min-height: 72dvh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mil-figma-embed-tall-mobile.mil-image-frame.mil-horizontal {
+        padding-bottom: 175%;
+        min-height: 76dvh;
+    }
+}
+
+/* Figma laptop/desktop layouts: squarer viewport on phones (not a tall phone frame) */
+@media screen and (max-width: 768px) {
+    .mil-figma-embed-square-mobile.mil-image-frame.mil-horizontal {
+        padding-bottom: 0;
+        aspect-ratio: 4 / 3;
+        min-height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mil-figma-embed-square-mobile.mil-image-frame.mil-horizontal {
+        aspect-ratio: 1 / 1;
+        min-height: 180px;
+    }
+}
+
 /* Before/After Image Slider – case study pages */
 .mil-image-frame .mil-before-after-slider {
     position: absolute;
@@ -8,6 +55,8 @@
     overflow: hidden;
     cursor: col-resize;
     user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
 }
 
 .mil-before-after-container {
